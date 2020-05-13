@@ -1,18 +1,25 @@
 import React, { Component } from 'react'
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
+import {
+    StyleSheet, Text, View,
+    TouchableOpacity, Platform, StatusBar, Image
+}
+    from 'react-native'
 
 
 import { Container, Content, Header, Left, Right, Icon, Item, Input } from 'native-base'
 import FAIcon from "react-native-vector-icons/FontAwesome";
+import Swiper from 'react-native-swiper'
+
 
 class HomeScreen extends Component {
     render() {
         return (
             <Container>
-                <Header style={{
+                <Header style={[{
                     backgroundColor: "#3a455c",
                     height: 90, borderBottomColor: "#757575"
-                }}>
+                }, styles.androidHeader]
+                }>
                     <Left style={{ flexDirection: "row" }}>
                         <Icon name="md-menu" style={{ color: "white", marginRight: 15 }}
                         />
@@ -62,9 +69,25 @@ class HomeScreen extends Component {
                             <Text>Your Account </Text>
                             <Icon name="arrow-forward" style={{ fontSize: 18 }} />
                         </View>
-
-
                     </View>
+
+                    <Swiper style={{ height: 100 }} autoplay={true}>
+                        <View style={{ flex: 1 }}>
+                            <Image source={require('../assets/swiper_2.jpg')}
+                                style={{ height: null, width: null, resizeMode: "contain", flex: 1 }}
+                            />
+                        </View>
+                        <View style={{ flex: 1 }}>
+                            <Image source={require('../assets/swiper_3.jpg')}
+                                style={{ height: null, width: null, resizeMode: "contain", flex: 1 }}
+                            />
+                        </View>
+                        <View style={{ flex: 1 }}>
+                            <Image source={require('../assets/swiper_2.jpg')}
+                                style={{ height: null, width: null, resizeMode: "contain", flex: 1 }}
+                            />
+                        </View>
+                    </Swiper>
                 </Content>
 
 
@@ -83,6 +106,13 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: "center",
         alignItems: "center"
+    },
+    androidHeader: {
+        ...Platform.select({
+            android: {
+                paddingTop: StatusBar.currentHeight
+            }
+        })
     }
 })
 
