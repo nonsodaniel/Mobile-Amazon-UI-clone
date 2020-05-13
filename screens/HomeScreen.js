@@ -6,9 +6,10 @@ import {
     from 'react-native'
 
 
-import { Container, Content, Header, Left, Right, Icon, Item, Input } from 'native-base'
+import { Container, Content, Header, Left, Right, Icon, Item, Input, Card, CardItem } from 'native-base'
 import FAIcon from "react-native-vector-icons/FontAwesome";
 import Swiper from 'react-native-swiper'
+import RecommendCardItem from '../components/RecommendCardItems';
 
 
 class HomeScreen extends Component {
@@ -88,6 +89,36 @@ class HomeScreen extends Component {
                             />
                         </View>
                     </Swiper>
+
+                    <Card>
+                        <CardItem header>
+                            <Text>Your Recommendations</Text>
+                        </CardItem>
+                        <RecommendCardItem
+                            itemName="You Don't Know Javascript"
+                            price="N3500.00"
+                            creator="Nonso Daniel"
+                            savings="2.5"
+                            rating="4"
+                            imageUri={require('../assets/recommended_1.jpg')}
+                        />
+                        <RecommendCardItem
+                            itemName="You Don't Know Javascript"
+                            price="N3500.00"
+                            creator="Nonso Daniel"
+                            savings="2.5"
+                            rating="4"
+                            imageUri={require('../assets/recommended_2.jpg')}
+                        />
+                        <RecommendCardItem
+                            itemName="You Don't Know Javascript"
+                            price="N3500.00"
+                            creator="Nonso Daniel"
+                            savings="2.5"
+                            rating="4"
+                            imageUri={require('../assets/recommended_3.jpg')}
+                        />
+                    </Card>
                 </Content>
 
 
