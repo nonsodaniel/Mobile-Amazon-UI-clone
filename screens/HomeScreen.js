@@ -10,6 +10,7 @@ import { Container, Content, Header, Left, Right, Icon, Item, Input, Card, CardI
 import FAIcon from "react-native-vector-icons/FontAwesome";
 import Swiper from 'react-native-swiper'
 import RecommendCardItem from '../components/RecommendCardItems';
+import { DrawerActions } from 'react-navigation';
 
 
 class HomeScreen extends Component {
@@ -23,6 +24,7 @@ class HomeScreen extends Component {
                 }>
                     <Left style={{ flexDirection: "row" }}>
                         <Icon name="md-menu" style={{ color: "white", marginRight: 15 }}
+                            onPress={() => this.props.navigation.dispatch(DrawerActions.openDrawer())}
                         />
                         <FAIcon name="amazon" style={{
                             color: "white", fontSize: 32
@@ -90,8 +92,12 @@ class HomeScreen extends Component {
                         </View>
                     </Swiper>
 
-                    <Card>
-                        <CardItem header>
+                    <Card
+                        style={{ marginLeft: 5, marginRight: 5 }}
+                    >
+                        <CardItem header style={{
+                            borderBottomWidth: 1, borderBottomColor: "#dee0e2"
+                        }}>
                             <Text>Your Recommendations</Text>
                         </CardItem>
                         <RecommendCardItem
@@ -109,6 +115,22 @@ class HomeScreen extends Component {
                             savings="2.5"
                             rating="4"
                             imageUri={require('../assets/recommended_2.jpg')}
+                        />
+                        <RecommendCardItem
+                            itemName="You Don't Know Javascript"
+                            price="N3500.00"
+                            creator="Nonso Daniel"
+                            savings="2.5"
+                            rating="4"
+                            imageUri={require('../assets/recommended_3.jpg')}
+                        />
+                        <RecommendCardItem
+                            itemName="You Don't Know Javascript"
+                            price="N3500.00"
+                            creator="Nonso Daniel"
+                            savings="2.5"
+                            rating="4"
+                            imageUri={require('../assets/recommended_3.jpg')}
                         />
                         <RecommendCardItem
                             itemName="You Don't Know Javascript"
