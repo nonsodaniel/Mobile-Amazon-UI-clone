@@ -26,9 +26,9 @@ class HomeScreen extends Component {
                     </Right>
                 </Header>
                 <View style={{
-                    height: 70, position: "absolute",
+                    height: 75, position: "relative",
                     right: 0, left: 0,
-                    top: 135, backgroundColor: "#3a455c",
+                    backgroundColor: "#3a455c",
                     flexDirection: "row", alignItems: "center",
                     paddingHorizontal: 5
                 }}>
@@ -50,6 +50,26 @@ class HomeScreen extends Component {
                         </Item>
                     </View>
                 </View>
+
+                <Content style={{ backgroundColor: "#d5d5d6" }}>
+                    <View style={{
+                        height: 50, backgroundColor: "white", paddingHorizontal: 5,
+                        flexDirection: "row", justifyContent: "space-between",
+                        alignItems: "center"
+                    }}>
+                        <Text>Hello, Nonso Daniel</Text>
+                        <View style={{ flexDirection: "row" }}>
+                            <Text>Your Account </Text>
+                            <Icon name="arrow-forward" style={{ fontSize: 18 }} />
+                        </View>
+
+
+                    </View>
+                </Content>
+
+
+
+
             </Container>
         )
     }
